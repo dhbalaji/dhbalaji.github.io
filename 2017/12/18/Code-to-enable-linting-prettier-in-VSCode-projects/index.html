@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="How I use git submodules for themes in my blog"/>
+        <meta property="og:title" content="Tools that helped me refactor 5000 LOC in 1 day"/>
     
 
     <!--Open Graph Description-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>How I use git submodules for themes in my blog - Balajis&#39; blog</title>
+    <title>Tools that helped me refactor 5000 LOC in 1 day - Balajis&#39; blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -158,13 +158,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>How I use git submodules for themes in my blog</h1>
+                    <h1>Tools that helped me refactor 5000 LOC in 1 day</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            24-09-2017
+                            18-12-2017
                         
                     </span>
                 </div>
@@ -185,7 +185,7 @@
                         
 
 
-<a href="/tags/BlogStories/">#BlogStories</a> <a href="/tags/Git/">#Git</a>
+<a href="/tags/Notes/">#Notes</a>
 
 
                     
@@ -205,47 +205,58 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="Using-Git-Submodules-for-maintaining-the-themes-in-HEXO-site"><a href="#Using-Git-Submodules-for-maintaining-the-themes-in-HEXO-site" class="headerlink" title="Using Git Submodules for maintaining the themes in HEXO site."></a>Using Git Submodules for maintaining the themes in HEXO site.</h1><h2 id="What-is-a-submodule"><a href="#What-is-a-submodule" class="headerlink" title="What is a submodule?"></a>What is a submodule?</h2><p><code>Git Submodule</code> is analogous to node packages in JavaScript. The difference being, we are not interested in updating or modifying the node packages. In case of git submodules, the developer is interested in updating the git submodules.</p>
-<ul>
-<li>Node packages -&gt; Read only, publicly available.</li>
-<li>Git submodules -&gt; Read &amp; write, private within an organization.</li>
+                <h1 id="Tools-that-helped-me-refactor-5000-LOC-in-1-day"><a href="#Tools-that-helped-me-refactor-5000-LOC-in-1-day" class="headerlink" title="Tools that helped me refactor 5000 LOC in 1 day"></a>Tools that helped me refactor 5000 LOC in 1 day</h1><p>It’s no brainer, if you have worked on mid size JS project. Things get messy.</p>
+<h3 id="Why-things-get-messy"><a href="#Why-things-get-messy" class="headerlink" title="Why things get messy"></a>Why things get messy</h3><ul>
+<li>Different editors which introduce confusion like tabs vs spaces etc</li>
+<li>Use of tools like <a href="://jsbeautifier.org">jsbeautifier.org</a></li>
+<li>Use of git version control after beautifying elsewhere</li>
+<li>Importing packages which are never used in that module</li>
+<li>Modules become large creating more merge conflicts in Git</li>
 </ul>
-<h2 id="Let-me-answer-few-FAQs-on-git-submodules"><a href="#Let-me-answer-few-FAQs-on-git-submodules" class="headerlink" title="Let me answer few FAQs on git submodules"></a>Let me answer few FAQs on git submodules</h2><ul>
-<li><p>How will the commit history be like? You cannot see the commits of the submodules. It prevents your history looks like spagetti.</p>
-</li>
-<li><p>How can I create a submodule inside a git repo? Its not a tedious process. <a href="https://git-scm.com/docs/git-submodule" target="_blank" rel="noopener">Docs here</a></p>
-</li>
-<li><p>What are the advantages of sub modules? </p>
-<ul>
-<li>Cleaner history</li>
-<li>Smaller repos</li>
-<li>One repo can depend on multiple sub modules</li>
-</ul>
-</li>
-<li><p>Will sub module code be referenced inside main repo? The reference to the folder exists. There will be an another file <code>.gitmodules</code> added to the codebase. The code will not be present as part of the main repo. You need to include <code>.gitmodules</code> along with the repo.</p>
-</li>
-<li><p>Why there are not many projects using git modules? I am not sure, there are some opinions and better options like <code>subtrees</code>.</p>
-</li>
-<li><p>Can <code>submodule</code> depend on other <code>submodule</code>? Yes, you need to use <code>--recursive</code> to perform actions on all the sub modules.</p>
-</li>
-</ul>
-<h2 id="Why-submodule-for-themes"><a href="#Why-submodule-for-themes" class="headerlink" title="Why submodule for themes?"></a>Why submodule for themes?</h2><ul>
-<li>Theme files must be loosely coupled to the hexo blog codebase.</li>
-<li>Loose coupling helps us to place the theme in a seperate repo so others can reuse the theme.</li>
-<li>Other developers can work on the theme, they need not have access to my codebase which has posts.</li>
-<li>The history of master repo will be clean. It will not contain silly history of commits like “Fixed Responsive bugs”. Instead the history will have relevant entries only.</li>
-</ul>
-<h2 id="How-does-your-setup-differ-for-a-git-repo-without-submodules"><a href="#How-does-your-setup-differ-for-a-git-repo-without-submodules" class="headerlink" title="How does your setup differ for a git repo without submodules?"></a>How does your setup differ for a git repo without submodules?</h2><p>Use <code>git clone --recursive URL</code> </p>
-<p>You can sync from <code>git submodule sync</code> to update. Refer docs for more commands.</p>
-<p>Check status via <code>git submodule status</code></p>
-<p>Init via <code>git submodule init</code> and <code>git submodule deinit</code></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Use <code>Eslint</code> &amp; <code>Prettier</code>.</p>
 <blockquote>
-<p>For normal users, go inside the folders to run your normal <code>git commands</code></p>
+<p>package.json</p>
 </blockquote>
-<h2 id="Links-amp-References"><a href="#Links-amp-References" class="headerlink" title="Links &amp; References"></a>Links &amp; References</h2><p><a href="https://git-scm.com/docs/git-submodule" target="_blank" rel="noopener">Git doc about git submodule</a></p>
-<p><a href="https://github.com/dhbalaji/hexoBlogSetup" target="_blank" rel="noopener">Source code of my blog on github</a></p>
-<p><a href="https://github.com/dhbalaji/cleanThemeModified" target="_blank" rel="noopener">Code for the theme</a></p>
-<p><a href="https://dhbalaji.github.io/">Blog link</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"yourProject"</span>,</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"Contains blah blah."</span>,</span><br><span class="line">    <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">    <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">        <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">        <span class="attr">"prettier"</span>:</span><br><span class="line">            <span class="string">"./node_modules/.bin/prettier --single-quote --print-width=100 '**/*.&#123;js,jsx&#125;'"</span>,</span><br><span class="line">        <span class="attr">"lint"</span>: <span class="string">"./node_modules/.bin/eslint '**/*.&#123;js,jsx&#125;'"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"keywords"</span>: [],</span><br><span class="line">    <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">    <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="attr">"eslint"</span>: <span class="string">"^4.13.1"</span>,</span><br><span class="line">        <span class="attr">"eslint-config-airbnb"</span>: <span class="string">"^16.1.0"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-import"</span>: <span class="string">"^2.8.0"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-jsx-a11y"</span>: <span class="string">"^6.0.3"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-react"</span>: <span class="string">"^7.5.1"</span>,</span><br><span class="line">        <span class="attr">"prettier"</span>: <span class="string">"^1.9.2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Plugins: <code>yarn</code> optional</p>
+<h3 id="Eslint"><a href="#Eslint" class="headerlink" title="Eslint"></a>Eslint</h3><p>Website: <a href="https://eslint.org/" target="_blank" rel="noopener">https://eslint.org/</a></p>
+<blockquote>
+<p>.eslintrc</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"extends"</span>: [<span class="string">"airbnb"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Plugins</strong> : ESLint by <code>dbaeumer.vscode-eslint</code></p>
+<h3 id="Prettier"><a href="#Prettier" class="headerlink" title="Prettier"></a>Prettier</h3><p>Website: <a href="https://prettier.io/" target="_blank" rel="noopener">https://prettier.io/</a></p>
+<blockquote>
+<p>.prettierrc</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"printWidth"</span>: <span class="number">80</span>,</span><br><span class="line">    <span class="attr">"semi"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Plugins</strong> <code>esbenp.prettier-vscode</code></p>
+<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><ul>
+<li>Install Plugins</li>
+<li>Open settings in VSCode and add</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"editor.formatOnSave"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Reload VSCode</li>
+<li>Run the tasks which run linting and prettifying from <code>cli</code>. You may add include &amp; exclude directories. By default <code>node_modules</code> is excluded.</li>
+<li>Request team to work on prelinted code.</li>
+<li>Check if prettier is working fine on all machines</li>
+<li>Update and save code to see <code>prettier</code> doing the magic for you.</li>
+<li><code>eslint</code> will validate/lint on type of code.</li>
+</ul>
+<p>There you go. It should work now.</p>
+<h2 id="Tools-referenced"><a href="#Tools-referenced" class="headerlink" title="Tools referenced"></a>Tools referenced</h2><ul>
+<li>VS Code</li>
+<li>Yarn</li>
+<li>Eslint</li>
+<li>Prettier</li>
+<li>VS code extensions</li>
+</ul>
+<blockquote>
+<p>Now your editor facilitates better code maintainability and Scaling.</p>
+</blockquote>
+<p>For instance, the linting setup helped me refactor 5000 LOC of <code>nodeJS</code> code in 1 day. The unused packages, missing dependencies were clearly informed to the developer. I have to satisfy missing dependencies and remove the rest. Errors like modified <code>const</code> were highlighted.</p>
+<p>Is it that, not convincing enough?</p>
 
 
                 
