@@ -1,0 +1,46 @@
+body {
+    background-color: #ff5722;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.divider {
+    margin-bottom: 1.5rem
+}
+main.card-panel {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    min-height: 1000px;
+    padding: 3rem
+}
+
+main.card-panel .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.top-banner .name {
+    font-size: 1.5rem;
+}
+
+.download {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    main.card-panel {
+        width: 100%;
+        margin-top: 0px;
+    }
+}
+
+@media only print {
+    main.card-panel {
+        width: 100%;
+        margin-top: 0px;
+    }
+}
