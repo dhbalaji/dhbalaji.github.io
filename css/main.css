@@ -6,14 +6,14 @@ body {
 }
 
 .divider {
-    margin-bottom: 1.5rem
+    margin-bottom: 0.6rem;
 }
 main.card-panel {
     width: 60%;
     margin: 0 auto;
     margin-top: 50px;
     min-height: 1000px;
-    padding: 3rem
+    padding: 3rem;
 }
 
 main.card-panel .row {
@@ -35,6 +35,12 @@ main.card-panel .row {
     main.card-panel {
         width: 100%;
         margin-top: 0px;
+    }
+    main.card-panel .row {
+        display: block;
+    }
+    .divider {
+        margin-bottom: 0.2rem;
     }
 }
 
