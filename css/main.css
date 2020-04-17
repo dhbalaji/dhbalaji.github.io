@@ -31,6 +31,21 @@ main.card-panel .row {
     right: 50px;
 }
 
+/* Overrides */
+span.badge.new:after {
+    content: '';
+}
+span.badge {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    border-radius: 2px;
+}
+@media only screen and (max-width: 600px) {
+
+}
+/* End of overrides */
+
 @media only screen and (max-width: 600px) {
     main.card-panel {
         width: 100%;
