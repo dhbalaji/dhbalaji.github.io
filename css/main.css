@@ -4,12 +4,16 @@ body {
     margin: 0;
     padding: 0;
 }
+main {
+    font-size: 1.25rem
+}
 
 .divider {
-    margin-bottom: 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
 }
 main.card-panel {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     margin-top: 50px;
     min-height: 1000px;
@@ -22,7 +26,7 @@ main.card-panel .row {
 }
 
 .top-banner .name {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .download {
