@@ -35,6 +35,11 @@ main.card-panel .row {
     right: 50px;
 }
 
+.job-story {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 /* Overrides */
 span.badge.new:after {
     content: '';
