@@ -1,5 +1,7 @@
 body {
     background-color: #ff5722;
+    background: -webkit-linear-gradient(45deg, rgba(250,31,85,0.8) 0%, rgba(253,115,90,0.8) 100%);
+    background: linear-gradient(45deg, rgba(250,31,85,0.8) 0%, rgba(253,115,90,0.8) 100%);
     position: relative;
     margin: 0;
     padding: 0;
@@ -14,8 +16,7 @@ main {
 }
 main.card-panel {
     width: 75%;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 70px auto;
     min-height: 1000px;
     padding: 3rem;
 }
@@ -69,4 +70,14 @@ span.badge {
     .divider {
         margin-bottom: 0.2rem;
     }
+}
+
+a {
+    color: orangered;
+}
+a:hover {
+    color: #fc7479;
+}
+.download-resume {
+    margin: 2rem 0 0;
 }
