@@ -1,7 +1,5 @@
 body {
-    background-color: #ff5722;
-    background: -webkit-linear-gradient(45deg, rgba(250,31,85,0.8) 0%, rgba(253,115,90,0.8) 100%);
-    background: linear-gradient(45deg, rgba(250,31,85,0.8) 0%, rgba(253,115,90,0.8) 100%);
+    background-color: #f44336;
     position: relative;
     margin: 0;
     padding: 0;
