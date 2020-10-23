@@ -1,5 +1,5 @@
 body {
-    background-color: #f44336;
+    background-color: #4a148c;
     position: relative;
     margin: 0;
     padding: 0;
@@ -71,10 +71,10 @@ span.badge {
 }
 
 a {
-    color: orangered;
+    color: purple;
 }
 a:hover {
-    color: #fc7479;
+    color: darkcyan;
 }
 .download-resume {
     margin: 2rem 0 0;
